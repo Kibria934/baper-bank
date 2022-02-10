@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bank website</title>
+        <!-- tailwindcss -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- font design -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;400;600&family=Open+Sans:wght@300;400;600&family=Oswald&family=Poppins:wght@400;500;600&family=Raleway&family=Roboto+Condensed:wght@300;400;700&family=Ubuntu&display=swap" rel="stylesheet">
+        <style>
+                body{
+                        font-family: 'Bebas Neue', cursive;
+                        font-family: 'Josefin Sans', sans-serif;
+                        font-family: 'Open Sans', sans-serif;
+                        font-family: 'Oswald', sans-serif;
+                        font-family: 'Poppins', sans-serif;
+                        font-family: 'Raleway', sans-serif;
+                        font-family: 'Roboto Condensed', sans-serif;
+                        font-family: 'Ubuntu', sans-serif;
+                }
+        </style>
+</head>
+<body>
+                  <!-- =========header start========= -->
+        <header>
+                <h1 class="text-5xl text-center mt-16 text-blue-300 font-semibold">My baper <span class="font-bold text-yellow-700 "> bank </span>(prvt) ltd.</h1>
+        </header>
+                                 <!-- --card-- -->
+        <main class="mt-20 w-3/4 mx-auto">
+         <div class="grid grid-cols-3 gap-4  ">
+                                <!-- deposite card -->
+                <div class="bg-green-300 shadow-2xl p-8 border rounded-md">
+                   <h3 class="text-3xl font-semibold text-white">Deposite</h3>
+                   <h4 class="text-5xl font-semibold text-white">$ <span id="diposite-amount" >000</span> </h4>
+                </div>
+                                <!-- widthdraw card -->
+                <div class="bg-teal-300 shadow-2xl p-8 border rounded-md">
+                   <h3 class="text-3xl font-semibold text-white">Widraw</h3>
+                   <h4 class="text-5xl font-semibold text-white">$<span id="withdraw-amount">000</span></h4>
+                </div>
+                                <!-- balance card -->
+                <div class="bg-yellow-300 shadow-2xl p-8 border rounded-md">
+                   <h3 class="text-3xl font-semibold text-white">Balance</h3>
+                   <h4 class="text-5xl font-semibold text-white">$<span id="balance-amount">5000</span></h4>
+                </div>
+        </div>
+
+
+                        <!-- ======widthdraw and diposite input field==== -->
+                        <!-- ============================================= -->
+
+
+        <section class="mt-10 grid grid-cols-2 gap-10">
+                                 <!-- ------first card------ -->
+                <div class="bg-red-100 p-8 border  shadow-lg rounded-md">
+                        <h1 class="text-4xl mb-4 text-green-800 font-bold">Diposite your banlace</h1>
+                          <div>
+                               <div >
+                                 <input  id="diposite-input"  class="border-2 block border-blue mb-5 w-96 py-2 px-4" type="text" placeholder="$ Amount you want to deposite">
+                               <button id="diposite-button" class="bg-green-400 px-4 py-2 shadow-md rounded-md text-white font-medium text-2xl ">Diposite</button>
+                               </div>
+                       </div>
+                </div>
+                                  <!-- ------second card------ -->
+                <div class="bg-indigo-100 p-8 border  shadow-lg rounded-md">
+                        <h1 class="text-4xl mb-4 text-red-900 font-bold">Widraw your money</h1>
+                          <div> 
+                               <div class="">
+                                 <input  id="withdraw-input"  class="border-2 block border-blue mb-5 w-96 py-2 px-4" type="text" placeholder="$ Amounat you want to withdraw">
+                               <button class="bg-green-400 px-4 shadow-md py-2 rounded-md text-white font-medium text-2xl " id="withdraw-button">Withdraw</button>
+                               </div>
+                       </div>
+                </div>
+        </section>
+        </main>
+        <script src="./js/bank.js"></script>
+</body>
+</html>
