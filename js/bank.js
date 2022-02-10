@@ -6,6 +6,19 @@ function deposite(input) {
         inputField.value = '';
         return inputvalue;
 }
+function amount(amount$,firstFunctionValue) {
+
+        // //deposite amount catch---------
+        const amountTotal = document.getElementById(amount$);
+        const amountTotalText = amountTotal.innerText;
+
+        //  //Adding to input and amount-----
+        const sumAmount = parseFloat(amountTotalText) + parseFloat(firstFunctionValue);
+        amountTotal.innerText = sumAmount;
+
+}
+
+
 
 
         //Deposite button handling with Event=======================
@@ -13,22 +26,9 @@ function deposite(input) {
 
 document.getElementById('diposite-button').addEventListener('click', function () {   
         const depositeInputValue = deposite('diposite-input');
-
-        //deposite amount catch---------
-        const depositeAmount = document.getElementById('diposite-amount');
-        const depositeAmountText = depositeAmount.innerText;
-
-         //Adding to input and amount-----
-        const depositeAmountTotal = parseFloat(depositeAmountText) + parseFloat(depositeInputValue);
-        depositeAmount.innerText = depositeAmountTotal;
-
-
-
-        // =====================================
-
-
-
-        // Balance Amount catch ------------
+        amount('diposite-amount', depositeInputValue)
+        
+        // // Balance Amount catch ------------
         const balanceAmount = document.getElementById('balance-amount');
         const balanceAmountText = balanceAmount.innerText;
        
@@ -39,25 +39,17 @@ document.getElementById('diposite-button').addEventListener('click', function ()
 })
 
 
+
+
+
+
         //Deposite button handling with Event=======================
         // ==============================================
 
-
 document.getElementById('withdraw-button').addEventListener('click', function () {
         const withdrawInputValue = deposite('withdraw-input')
-        
-        // Withdraw amount catch--------------------
-        const withdrawAmount = document.getElementById('withdraw-amount');
-        const withdrawAmountText = withdrawAmount.innerText;
+        amount('withdraw-amount', withdrawInputValue)
 
-        // Adding Withdraw amount  and withdraw input----------
-        const withdrawTotal = parseFloat(withdrawAmountText) + parseFloat(withdrawInputValue);
-        withdrawAmount.innerText = withdrawTotal;
-
-
-        //=====================================================
-
-        
         // Balance Amount catch ------------
         const balanceAmount = document.getElementById('balance-amount');
         const balanceAmountText = balanceAmount.innerText;
