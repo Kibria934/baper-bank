@@ -7,56 +7,43 @@ function deposite(input) {
         return inputvalue;
 }
 function amount(amount$,firstFunctionValue) {
-
         // //deposite amount catch---------
         const amountTotal = document.getElementById(amount$);
         const amountTotalText = amountTotal.innerText;
-
         //  //Adding to input and amount-----
         const sumAmount = parseFloat(amountTotalText) + parseFloat(firstFunctionValue);
         amountTotal.innerText = sumAmount;
-
 }
 
-
-
-
-        //Deposite button handling with Event=======================
-        // ==============================================
-
-document.getElementById('diposite-button').addEventListener('click', function () {   
-        const depositeInputValue = deposite('diposite-input');
-        amount('diposite-amount', depositeInputValue)
-        
+function balanceUpdate(input2,isAdd) {
         // // Balance Amount catch ------------
         const balanceAmount = document.getElementById('balance-amount');
         const balanceAmountText = balanceAmount.innerText;
-       
-        // Adding Balance amount and Deposite input----
-        const balanceTotal = parseFloat(depositeInputValue) + parseFloat(balanceAmountText);
-        balanceAmount.innerText = balanceTotal;
-         
+                 if (isAdd == true) {
+                        // Adding Balance amount and Deposite input----
+                        const balanceTotal = parseFloat(input2) + parseFloat(balanceAmountText);
+                        balanceAmount.innerText = balanceTotal;
+                }
+                else {
+                        // Adding Balance amount and Deposite input----
+                        const balanceTotal = parseFloat(balanceAmountText) -parseFloat(input2);
+                        balanceAmount.innerText = balanceTotal;
+                }
+}
+
+// ===================================================================================================
+
+        //Deposite button handling with Event// 
+document.getElementById('diposite-button').addEventListener('click', function () {   
+        const depositeInputValue = deposite('diposite-input'); //function-1
+        amount('diposite-amount', depositeInputValue) // function -2
+        balanceUpdate(depositeInputValue,true) // function -3         
 })
 
-
-
-
-
-
-        //Deposite button handling with Event=======================
-        // ==============================================
-
+        // Withdraw button handling with Event//
 document.getElementById('withdraw-button').addEventListener('click', function () {
         const withdrawInputValue = deposite('withdraw-input')
         amount('withdraw-amount', withdrawInputValue)
-
-        // Balance Amount catch ------------
-        const balanceAmount = document.getElementById('balance-amount');
-        const balanceAmountText = balanceAmount.innerText;
-
-        //Withdraw Input and Balnce amount Minus ------------
-        const finaleBalance = parseFloat(balanceAmountText) - parseFloat(withdrawInputValue);
-        balanceAmount.innerText = finaleBalance;
-        
+        balanceUpdate(withdrawInputValue,false)
 
 })
